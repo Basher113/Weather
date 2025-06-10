@@ -1,6 +1,8 @@
 /* Josh Comeau’s custom CSS reset  */
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -24,18 +26,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -43,32 +58,58 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 :root {
-    --primary-color: rgb(0, 111, 133);
-    --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    --light-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --secondary-color: linear-gradient(to right top, #274351, #244153, #233f55, #233c56, #263957, #223a59, #1c3c5a, #163d5b, #03425a, #004756, #0b4b50, #1d4e4a);;
+  --shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --light-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-    background-color: var(--primary-color);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 1em;
+  overflow-x: hidden;
+  background-color: rgb(20, 36, 58);
+  color: white;
 }
 
 .content {
-  width: 100vw;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
 }
 
 .hero {
@@ -77,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   padding: 4em;
-  background-color: rgb(241, 241, 241);
+  background-image: var(--secondary-color);
   border-radius: 14px;
   h1 {
     font-size: 3rem;
@@ -91,7 +132,6 @@ h1, h2, h3, h4, h5, h6 {
 form {
   padding: 2em 0;
   font-size: 1rem;
-
 
   input {
     width: 100%;
@@ -112,6 +152,63 @@ form {
   }
 }
 
+.weather-content {
+  background-image: var(--secondary-color);
+  padding: 4em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 1em;
+  gap: 2em;
+}
 
+.weather-content .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3em;
+  h3 {
+    font-size: 1.5rem;
+  }
 
+  .desc-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+  }
 
+  img {
+    height: 7rem;
+    width: 7rem;
+  }
+
+  .temparature {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+
+.weather-content .right {
+  display: grid;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 1em;
+  .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    background-color: #1d344e;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  .weather-content {
+    grid-template-columns: 1fr;
+    width: 80vw;
+  }
+}
