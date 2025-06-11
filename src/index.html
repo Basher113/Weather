@@ -8,47 +8,18 @@
   <body>
     <div class="content">
       <div class="hero">
-        <h1>Weather App</h1>
-        <p>Get weather data from around the world!</p>
+        <h1>Global Weather Tracker</h1>
+        <p>Stay updated with real-time weather conditions worldwide!</p>
 
-        <form action="">
+        <form action="" id="location-form">
           <input type="text" placeholder="Enter a location" name="location" />
           <button>Get weather</button>
         </form>
       </div>
 
-      <div class="weather-content">
-        <div class="left">
-          <h3 class="address">Taguig City, National Capital Region, Philippines</h3>
-          <div class="desc-img">
-            <div class="description">"Warming up with a chance of rain multiple days."</div>
-            <img src="./assets/cloud.svg" alt="cloud icon" height="80" width="80">
-          </div>
-          
-          <div class="temparature">28&deg;</div>
-        </div>
-        <div class="right">
-          <div class="info">
-            <div>Windspeed: </div>
-            <div>11.4</div>
-          </div>
-          <div class="info">
-            <div>Feels like: </div>
-            <div>90.8</div>
-          </div>
-          <div class="info">
-            <div>humidity: </div>
-            <div>85.1</div>
-          </div>
-          <div class="info">
-            <div>UV Index: </div>
-            <div>4</div>
-          </div>
-          
-        </div>
-      </div>
+      <div class="weather-content"></div>
+      <span class="loader"></span>
+      <span class="error-message"></span>
     </div>
-
-    
   </body>
 </html>
